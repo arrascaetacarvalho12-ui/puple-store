@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finalizar compra - Puple Store</title>
+  <style>
+    body { background:#1e1b4b; color:white; font-family:Arial,sans-serif; text-align:center; margin:0; }
+    header { background:#6d28d9; padding:25px; }
+    .box { background:#2e2a7a; max-width:400px; margin:30px auto; padding:25px; border-radius:18px; }
+    input, select { width:90%; padding:12px; margin:8px 0; border-radius:10px; border:none; font-size:15px; }
+    button { background:#6d28d9; color:white; border:none; padding:12px 20px; border-radius:10px; font-weight:bold; cursor:pointer; margin-top:10px; }
+    a { color:#c4b5fd; display:block; margin-top:15px; }
+  </style>
+</head>
+<body>
+<header><h1>💜 PUPLE STORE</h1><p>Finalizar compra</p></header>
+
+<div class="box">
+  <h2>✅ Seus dados de entrega</h2>
+  <input type="text" id="nome" placeholder="Seu nome">
+  <input type="text" id="endereco" placeholder="Seu endereço completo">
+  <input type="text" id="numero" placeholder="Número da casa / Complemento">
+  <input type="text" id="cep" placeholder="CEP">
+  <select id="pagamento">
+    <option>Pix</option>
+    <option>Cartão de crédito</option>
+    <option>Cartão de débito</option>
+    <option>Dinheiro</option>
+  </select>
+  <br>
+  <button onclick="confirmar()">Confirmar pedido</button>
+  <a href="index.html">← Voltar para a loja</a>
+</div>
+
+<script>
+  function confirmar() {
+    let nome = document.getElementById("nome").value;
+    let endereco = document.getElementById("endereco").value;
+    let pagamento = document.getElementById("pagamento").value;
+    if (nome === "" || endereco === "") {
+      alert("Preencha seu nome e endereço!");
+      return;
+    }
+    alert("Obrigada, " + nome + "! Pedido confirmado!\nPagamento: " + pagamento + "\nEntrega para: " + endereco);
+    window.location.href = "index.html";
+  }
+</script>
+</body>
+</html>
